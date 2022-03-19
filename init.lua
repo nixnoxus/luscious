@@ -50,17 +50,24 @@ local function on_construct(pos)
 	minetest.swap_node(pos, node)
 end
 
-minetest.override_item("default:dirt_with_grass", {
-	paramtype2 = "color",
-	drawtype = "color",
-	palette_index = 136,
-	color = "#7dea1eff",
-	palette = "luscious_grass_palette.png",
-	tiles = {"luscious_grass.png", {name = "default_dirt.png", color = "white"}, "luscious_grass.png"},
-	overlay_tiles = {"", "", {name = "luscious_dirt_overlay.png", color = "white"}},
-	place_param2 = 136,
-	on_construct = on_construct,
-})
+for _, v in pairs({
+	"default:dirt_with_grass",
+	"default:dirt_with_dry_grass",
+	"default:dirt_with_rainforest_litter",
+	"default:dirt_with_snow",
+}) do
+	minetest.override_item(v, {
+		paramtype2 = "color",
+		drawtype = "color",
+		palette_index = 136,
+		color = "#7dea1eff",
+		palette = "luscious_grass_palette.png",
+		tiles = {"luscious_grass.png", {name = "default_dirt.png", color = "white"}, "luscious_grass.png"},
+		overlay_tiles = {"", "", {name = "luscious_dirt_overlay.png", color = "white"}},
+		place_param2 = 136,
+		on_construct = on_construct,
+	})
+end
 
 for _, v in pairs({
 	"default:leaves",
@@ -83,10 +90,6 @@ for _, v in pairs({
 		on_construct = on_construct,
 	})
 end
-
-minetest.register_alias_force("default:dirt_with_dry_grass", "default:dirt_with_grass")
-minetest.register_alias_force("default:dirt_with_rainforest_litter", "default:dirt_with_grass")
-minetest.register_alias_force("default:dirt_with_snow", "default:dirt_with_grass")
 
 for _, v in pairs({
 	"default:grass_1",
@@ -117,6 +120,9 @@ end
 -- content ids
 local cn = {
 	["default:dirt_with_grass"] = 1,
+	["default:dirt_with_dry_grass"] = 1,
+	["default:dirt_with_rainforest_litter"] = 1,
+	["default:dirt_with_snow"] = 1,
 	["default:grass_1"] = 1,
 	["default:grass_2"] = 1,
 	["default:grass_3"] = 1,

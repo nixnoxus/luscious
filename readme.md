@@ -25,11 +25,11 @@ nodes in the landscape.
 - should not break with texture packs, but you'll lose texture
   pack specific leaf and grass textures.
 - grass spread places the correct color.
-- jungle dirt is replaced by dirt with grass.
+- jungle dirt texture is replaced by dirt with grass texture.
 - jungle grass is also colored.
-- dirt with dry grass is replaced by dirt with grass.
-- dirt with snow is replaced by dirt with grass.
-- dry grass is replaced with grass.
+- dirt with dry grass texture is replaced by dirt with grass texture.
+- dirt with snow texture is replaced by dirt with grass texture.
+- dry grass texture is replaced with grass texture.
 
 ## bugs
 
